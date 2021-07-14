@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col>
+      <ion-label>Name</ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>Lat</ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>Long</ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="trash-outline" (click)="deleteUser()"></ion-icon>
+    </ion-col>
+    
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-label>{{name}}</ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>{{latitude}}</ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>{{longitude}}</ion-label>
+    </ion-col>
+    <ion-col>
+      
+    </ion-col>
+    
+  </ion-row>
+
+
+
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "softBang",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-row>
+    <ion-col>
+  <ion-button color="primary" type="buttton" (click)="createUser()"  *ngIf="!createUserCheck">Create user</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="!createUserCheck && name">
+  <ion-row>
+    <ion-col>
+      <ion-label>Name</ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>Lat</ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>Long</ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="trash-outline" (click)="deleteUser()"></ion-icon>
+    </ion-col>
+    
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-label>{{name}}</ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>{{latitude}}</ion-label>
+    </ion-col>
+    <ion-col>
+      <ion-label>{{longitude}}</ion-label>
+    </ion-col>
+    <ion-col>
+      
+    </ion-col>
+    
+  </ion-row>
+
+ 
+  
+</div>
+
+  <form [formGroup]="profileForm" (ngSubmit)="submitForm()" *ngIf="createUserCheck">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input placeholder="Enter Name" type="text" formControlName="name"></ion-input>
+  </ion-item>
+          </ion-col>
+      </ion-row>
+       <span class="error ion-padding" *ngIf="isSubmit && this.profileForm.controls.name.errors?.required">
+        Name is required.
+      </span>
+      <span class="error ion-padding" *ngIf="isSubmit && this.profileForm.controls.name.errors?.minlength">
+        Name should be more than 2 charactes.
+      </span>
+
+
+      
+  
+    
+      <ion-row>
+        <ion-col>
+          <ion-button color="primary" type="submit" >Submit</ion-button>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
